@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClimaFit - Weather & Outfit Advisor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <h1>🌤️ ClimaFit - Weather & Outfit Advisor</h1>
+
+    <div class="location-box">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button onclick="getWeatherByCity()">Search</button>
+      <button onclick="getWeatherByLocation()">Use My Location</button>
+      
+    </div>
+
+    <div id="weatherCard" class="hidden">
+<div id="wardrobeSection">
+  <h3>👚 My Wardrobe</h3>
+  <form id="wardrobeForm">
+    <input type="text" id="itemName" placeholder="Clothing name" required />
+    <select id="itemType">
+      <option>T-Shirt</option>
+      <option>Shirt</option>
+      <option>Jacket</option>
+      <option>Hoodie</option>
+      <option>Kurta</option>
+    </select>
+    <input type="number" id="warmth" min="1" max="5" placeholder="Warmth (1-5)" required />
+    <button type="submit">Add</button>
+  </form>
+  <ul id="wardrobeList"></ul>
+</div>
+
+      <h2 id="locationName"></h2>
+      <p id="currentTemp"></p>
+      <p id="avgTemp"></p>
+
+      <h3>🌡️ Hourly Forecast</h3>
+      <div id="forecast" class="forecast-list"></div>
+
+      <div id="outfitSuggestion" class="outfit-card"></div>
+    </div>
+  </div>
+<h3>📸 Upload a Selfie</h3>
+<input type="file" id="selfieInput" accept="image/*" capture="environment" />
+<canvas id="selfieCanvas" style="display:none;"></canvas>
+<p id="colorSuggestion" style="margin-top:10px; font-weight:500; text-align:center;"></p>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
